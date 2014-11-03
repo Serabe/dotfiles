@@ -22,11 +22,12 @@ end
 def symlink_file f
   backup_if_needed f
   puts "Symlinking #{f}"
-  FileUtils.ln_s file_in_current(f), file_in_home(f)
+  FileUtils.ln_s file_in_current(f), file_in_home(f) unless File.exists?(file_in_home(f))
 end
 
 DO_NOTHING = [
-  "Rakefile"
+  "Rakefile",
+  "LICENSE"
 ]
 
 task :symlink_files do
