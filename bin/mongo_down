@@ -1,0 +1,24 @@
+#!/bin/bash
+
+DBPATH=/usr/local/var/mongodb
+PID=$(cat $DBPATH/mongod.lock)
+MONGO_LOG=/var/db/mongo/mongo.log
+if [ -z "$PID" ];
+  then
+  echo "mongod isn't running, no need to stop"
+else
+  echo "it is"
+  echo "Stopping mongo with -> /bin/kill -2 $PID"
+  /bin/kill -2 $PID
+fi
+
+case "$1" in
+  clean)
+    if [ -e $MONGO_LOG ]; then
+      echo "Removing log with -> sudo rm $MONGO_LOG"
+      sudo rm $MONGO_LOG
+    else
+      echo "$MONGO_LOG does not exists."
+    fi
+    ;;
+esac

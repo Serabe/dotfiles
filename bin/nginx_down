@@ -1,0 +1,2 @@
+#!/bin/bash
+launchctl unload /usr/local/Cellar/nginx/1.4.4/homebrew.mxcl.nginx.plist

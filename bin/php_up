@@ -1,0 +1,2 @@
+#!/bin/bash
+launchctl load /usr/local/opt/php55/homebrew-php.josegonzalez.php55.plist

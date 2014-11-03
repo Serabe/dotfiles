@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CONF=/usr/local/Cellar/mongodb/2.4.9/mongod.conf
+MONGO_PATH=/usr/local/bin
+
+echo "Starting mongo with -> $MONGO_PATH/mongod run --config $CONF"
+$MONGO_PATH/mongod run --config $CONF
