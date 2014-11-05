@@ -84,3 +84,7 @@ source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR=~/.nvm
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Set LC_ALL and LANG
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
