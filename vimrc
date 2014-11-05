@@ -7,6 +7,7 @@ filetype off
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+set guifont=Inconsolata\ for\ Powerline
 
 " Saves time
 nmap <space> :
@@ -143,4 +144,10 @@ set nobackup       " no backup files
 set nowritebackup  " only in case you don't want a backup file while editing
 set noswapfile     " no swap files
 
-" Avoid saving files.
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_theme='molokai'
