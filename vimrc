@@ -163,3 +163,11 @@ if has("persistent_undo")
     set undodir='~/.undodir/'
     set undofile
 endif
+
+" Undotree config
+let g:undotree_WindowLayout = 2
+let g:undotree_SetFocusWhenToggle = 1
+imap <Leader>u :UndotreeToggle<cr>
+nmap <Leader>u :UndotreeToggle<cr>
+vmap <Leader>u :UndotreeToggle<cr>
+
