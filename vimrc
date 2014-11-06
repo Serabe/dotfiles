@@ -156,3 +156,10 @@ let g:airline_theme='molokai'
 " Git Gutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+" Persisten undo
+" This makes all *.un~ files to be stored in ~/.undodir
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    set undofile
+endif
