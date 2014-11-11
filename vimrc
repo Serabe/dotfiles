@@ -134,6 +134,7 @@ endif
 let g:ctrlp_working_path_mode = 'ra'
 " Ignore some files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*
+let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
 
 " Color Scheme
 colorscheme molokai
