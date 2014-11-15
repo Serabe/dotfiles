@@ -82,8 +82,10 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" Save after losing focus
-au FocusLost * :wa
+" Auto saving
+au FocusLost * :wa " Save after losing focus
+set autowrite " write when switching files
+set autoread  " read automagically from disk
 
 " Faster escape settings
 imap jk <ESC>
