@@ -24,6 +24,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Keep it sane
 set scrolloff=3
