@@ -175,3 +175,6 @@ imap <Leader>u :UndotreeToggle<cr>
 nmap <Leader>u :UndotreeToggle<cr>
 vmap <Leader>u :UndotreeToggle<cr>
 
+" Explorer configuration
+map <Leader>k :Vexplore<CR>
+let g:netrw_liststyle=3
