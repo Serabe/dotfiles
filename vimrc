@@ -178,3 +178,19 @@ vmap <Leader>u :UndotreeToggle<cr>
 " Explorer configuration
 map <Leader>k :Vexplore<CR>
 let g:netrw_liststyle=3
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+" use smartcase
+let g:neocomplete#enable_smart_case = 1
+" minimum syntax keyword length
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
