@@ -17,3 +17,14 @@
 *~
 [#]*[#]
 .\#*
+
+# Svn
+.svn
+
+# CTags
+tags
+
+# Rails
+log/
+db/*.sqlite3
+tmp/
