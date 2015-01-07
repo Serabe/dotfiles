@@ -69,7 +69,7 @@ set showmatch
 set hlsearch
 
 " Clear current search with , + space
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Use tab instead of % to match bracket pairs
 nnoremap <tab> %
