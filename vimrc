@@ -41,6 +41,9 @@ set laststatus=2
 set relativenumber
 set undofile
 
+" Paste toggle for large chunks of text
+set pastetoggle=<F2>
+
 " Set <leader> key
 let mapleader = ","
 
