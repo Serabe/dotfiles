@@ -78,6 +78,9 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Launch nwjs
+alias nwjs=/Applications/nwjs.app/Contents/MacOS/nwjs
 
 # NVM configuration
 source $(brew --prefix nvm)/nvm.sh
