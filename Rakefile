@@ -36,7 +36,9 @@ task :symlink_files do
   FileList["*"].to_a.reject do |f|
     f.end_with?('.erb') || DO_NOTHING.include?(f)
   end.find_all do |f|
-    File.file?(f)|| File.directory?(f)
+    File.file?(f) || File.directory?(f)
+  end.reject do |f|
+    f.start_with?("IO")
   end.each do |f|
     symlink_file f
   end
