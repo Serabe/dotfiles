@@ -88,6 +88,12 @@ export NVM_DIR=~/.nvm
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# Go settings
+export GOPATH=$HOME/Go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 # Set LC_ALL and LANG
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
