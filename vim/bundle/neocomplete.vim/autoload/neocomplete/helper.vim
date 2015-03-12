@@ -55,26 +55,26 @@ function! neocomplete#helper#get_cur_text(...) "{{{
   return neocomplete.cur_text
 endfunction"}}}
 
-function! neocomplete#helper#is_omni(cur_text) "{{{
+function! neocomplete#helper#get_force_omni_complete_pos(cur_text) "{{{
   " Check eskk complete length.
   if neocomplete#is_eskk_enabled()
         \ && exists('g:eskk#start_completion_length')
     if !neocomplete#is_eskk_convertion(a:cur_text)
           \ || !neocomplete#is_multibyte_input(a:cur_text)
-      return 0
+      return -1
     endif
 
     let complete_pos = call(&l:omnifunc, [1, ''])
     let complete_str = a:cur_text[complete_pos :]
-    return neocomplete#util#mb_strlen(complete_str) >=
-          \ g:eskk#start_completion_length
+    return (neocomplete#util#mb_strlen(complete_str) >=
+          \ g:eskk#start_completion_length) ? complete_pos : -1
   endif
 
   let filetype = neocomplete#get_context_filetype()
   let omnifunc = &l:omnifunc
 
   if neocomplete#helper#check_invalid_omnifunc(omnifunc)
-    return 0
+    return -1
   endif
 
   if has_key(g:neocomplete#force_omni_input_patterns, omnifunc)
@@ -83,14 +83,10 @@ function! neocomplete#helper#is_omni(cur_text) "{{{
         \ get(g:neocomplete#force_omni_input_patterns, filetype, '') != ''
     let pattern = g:neocomplete#force_omni_input_patterns[filetype]
   else
-    return 0
+    return -1
   endif
 
-  if a:cur_text !~# '\%(' . pattern . '\m\)$'
-    return 0
-  endif
-
-  return 1
+  return match(a:cur_text, '\%(' . pattern . '\m\)$')
 endfunction"}}}
 
 function! neocomplete#helper#is_enabled_source(source, filetype) "{{{
@@ -130,7 +126,11 @@ function! neocomplete#helper#get_source_filetypes(filetype) "{{{
     call add(filetypes, 'text')
   endif
 
-  return neocomplete#util#uniq(filetypes)
+  if len(filetypes) > 1
+    let filetypes = neocomplete#util#uniq(filetypes)
+  endif
+
+  return filetypes
 endfunction"}}}
 
 function! neocomplete#helper#complete_check() "{{{
@@ -138,11 +138,11 @@ function! neocomplete#helper#complete_check() "{{{
   if g:neocomplete#enable_debug
     echomsg split(reltimestr(reltime(neocomplete.start_time)))[0]
   endif
-  let ret = (!neocomplete#is_prefetch() && complete_check())
-        \ || (neocomplete#is_auto_complete()
+  let ret =
+        \ neocomplete#is_auto_complete()
         \     && g:neocomplete#skip_auto_completion_time != ''
         \     && split(reltimestr(reltime(neocomplete.start_time)))[0] >
-        \          g:neocomplete#skip_auto_completion_time)
+        \          g:neocomplete#skip_auto_completion_time
   if ret
     let neocomplete = neocomplete#get_current_neocomplete()
     let neocomplete.skipped = 1
