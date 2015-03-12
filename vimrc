@@ -201,3 +201,5 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " Configure Dash lookup
 :nmap <silent> <leader>d <Plug>DashSearch
 
+" Configure mustache
+let g:mustache_abbreviations = 1
