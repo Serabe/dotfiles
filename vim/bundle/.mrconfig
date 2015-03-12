@@ -11,9 +11,6 @@ checkout = git clone 'git@github.com:rizzatti/dash.vim.git' 'dash.vim'
 [emmet-vim]
 checkout = git clone 'git@github.com:mattn/emmet-vim.git' 'emmet-vim'
 
-[mustache]
-checkout = git clone 'git://github.com/mustache/vim-mustache-handlebars.git' 'mustache'
-
 [neocomplete.vim]
 checkout = git clone 'git@github.com:Shougo/neocomplete.vim.git' 'neocomplete.vim'
 
