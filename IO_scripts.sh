@@ -10,3 +10,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
 # sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.apsd.plist w
 
 # Set Inconsolata-dz for Powerline in iTerm for bot ASCII and non-ASCII chars
+
+# Avoid swipe navigate with scrolls in chrome
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE

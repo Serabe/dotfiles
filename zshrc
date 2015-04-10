@@ -45,7 +45,7 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp gem git gitignore lein marked2 node npm nvm postgres rails rvm sublime)
+plugins=(atom bower brew bundler capistrano cp gem git git-flow gitignore lein marked2 node npm nvm postgres rails rvm sublime)
 
 source $ZSH/oh-my-zsh.sh
 
