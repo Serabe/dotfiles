@@ -55,3 +55,6 @@ checkout = git clone 'git@github.com:sjl/vitality.vim.git' 'vitality.vim'
 
 [vim-mustache-handlebars]
 checkout = git clone 'git@github.com:mustache/vim-mustache-handlebars.git' 'vim-mustache-handlebars'
+
+[editorconfig-vim]
+checkout = git clone 'git@github.com:editorconfig/editorconfig-vim.git' 'editorconfig-vim'
