@@ -1,0 +1,3 @@
+
+[.dotfiles/emacs.d]
+checkout = git clone 'http://github.com/syl20bnr/spacemacs' 'emacs.d'
