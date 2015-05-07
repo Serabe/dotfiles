@@ -202,4 +202,4 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 :nmap <silent> <leader>d <Plug>DashSearch
 
 " Configure mustache
-let g:mustache_abbreviations = 1
+let g:mustache_abbreviations = 0
