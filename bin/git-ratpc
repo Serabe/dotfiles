@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# After @porras one-liner, comes the remote version.
+git branch -r --merged | grep -v master | sed 's/origin\//:/' | xargs -n 1 git push origin
