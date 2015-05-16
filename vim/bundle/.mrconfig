@@ -58,3 +58,6 @@ checkout = git clone 'git@github.com:mustache/vim-mustache-handlebars.git' 'vim-
 
 [editorconfig-vim]
 checkout = git clone 'git@github.com:editorconfig/editorconfig-vim.git' 'editorconfig-vim'
+
+[committia.vim]
+checkout = git clone 'https://github.com/rhysd/committia.vim' 'committia.vim'

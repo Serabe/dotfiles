@@ -6,6 +6,12 @@ if !exists("g:go_dispatch_enabled")
     let g:go_dispatch_enabled = 0
 endif
 
+function! go#cmd#autowrite()
+    if &autowrite == 1
+        silent wall
+    endif
+endfunction
+
 function! go#cmd#Run(bang, ...)
     let goFiles = '"' . join(go#tool#Files(), '" "') . '"'
 
@@ -48,10 +54,17 @@ endfunction
 function! go#cmd#Install(...)
     let pkgs = join(a:000, '" "')
     let command = 'go install "' . pkgs . '"'
+    call go#cmd#autowrite()
     let out = go#tool#ExecuteInDir(command)
     if v:shell_error
         call go#tool#ShowErrors(out)
         cwindow
+        let errors = getqflist()
+        if !empty(errors)
+            if g:go_jump_to_error
+                cc 1 "jump to first error if there is any
+            endif
+        endif
         return
     endif
 
@@ -110,6 +123,7 @@ function! go#cmd#Test(compile, ...)
         let command .= a:2
     endif
 
+    call go#cmd#autowrite()
     if a:compile
         echon "vim-go: " | echohl Identifier | echon "compiling tests ..." | echohl None
     else
@@ -176,6 +190,7 @@ function! go#cmd#Coverage(...)
 
     let command = "go test -coverprofile=".l:tmpname
 
+    call go#cmd#autowrite()
     let out = go#tool#ExecuteInDir(command)
     if v:shell_error
         call go#tool#ShowErrors(out)
@@ -199,6 +214,7 @@ function! go#cmd#Coverage(...)
 endfunction
 
 function! go#cmd#Vet()
+    call go#cmd#autowrite()
     echon "vim-go: " | echohl Identifier | echon "calling vet..." | echohl None
     let out = go#tool#ExecuteInDir('go vet')
     if v:shell_error
