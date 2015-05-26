@@ -21,17 +21,22 @@ disabled/enabled easily.
 * Compile your package with `:GoBuild` , install it with `:GoInstall`
 * `:GoRun` quickly your current file/files
 * Run `:GoTest` and see any errors in quickfix window
+* Automatic `GOPATH` detection based on the directory structure (i.e: `godep`
+  vendored projects)
+* Change or display `GOPATH` with `:GoPath`
 * Create a coverage profile and display annotated source code in browser to see
   which functions are covered with `:GoCoverage`
 * Lint your code with `:GoLint`
 * Run your code through `:GoVet` to catch static errors.
-* Advanced source analysis tool with oracle, such as `:GoImplements`, `:GoCallees`, `:GoReferrers`
+* Advanced source analysis tool with oracle, such as `:GoImplements`,
+  `:GoCallees`, `:GoReferrers`
 * Precise type-safe renaming of identifiers with `:GoRename`
 * List all source files and dependencies
 * Checking with `:GoErrCheck` for unchecked errors.
 * Integrated and improved snippets. Supports `ultisnips` or `neosnippet`
 * Share your current code to [play.golang.org](http://play.golang.org) with `:GoPlay`
-* On-the-fly type information about the word under the cursor. Plug it into your custom vim function.
+* On-the-fly type information about the word under the cursor. Plug it into
+  your custom vim function.
 * Tagbar support to show tags of the source code in a sidebar with `gotags`
 * Custom vim text objects, such a `a function` or `inner function`
 
@@ -192,6 +197,14 @@ let g:go_highlight_build_constraints = 1
 
 ## Troubleshooting
 
+### Not an editor command
+
+This happens if vim-go is not installed properly. Be sure you have added this line into your `.vimrc`:
+
+```vim
+filetype plugin indent on
+```
+
 ### Command not found
 
 If trying to use `:GoDef`,  `:GoInfo` and get a `command not found`, check that you have the binaries installed by using: `:GoInstallBinaries`
@@ -205,6 +218,8 @@ after opening vim, run `:echo $PATH`, the output must be your current `$PATH` + 
 If problem persists and you are using maybe 'csh' or other shell, try adding this to your .vimrc:
 
     set shell=/bin/sh
+    
+
 
 
 
