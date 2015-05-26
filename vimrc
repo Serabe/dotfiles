@@ -234,6 +234,6 @@ function! g:committia_hooks.edit_open(info)
     imap <buffer><C-p> <Plug>(committia-scroll-diff-up-half)
 endfunction
 " If the value is 0, committia.vim always attempts to open committia's buffer when
-" COMMIT_EDITMSG buffer is opened. If you use vim-fugitive, I recommend to set this 
+" COMMIT_EDITMSG buffer is opened. If you use vim-fugitive, I recommend to set this
 " value to 1. The default value is 1.
 let g:committia_open_only_vim_starting=0
