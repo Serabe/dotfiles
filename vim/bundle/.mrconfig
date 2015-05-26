@@ -61,3 +61,6 @@ checkout = git clone 'git@github.com:editorconfig/editorconfig-vim.git' 'editorc
 
 [committia.vim]
 checkout = git clone 'https://github.com/rhysd/committia.vim' 'committia.vim'
+
+[vim-over]
+checkout = git clone 'https://github.com/osyo-manga/vim-over' 'vim-over'
