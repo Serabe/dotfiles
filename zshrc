@@ -45,7 +45,7 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp gem git git-flow gitignore lein marked2 node npm nvm postgres rails rvm sublime)
+plugins=(atom bower brew bundler capistrano cp gem git git-flow gitignore lein marked2 postgres rails rvm sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,9 +82,13 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bi
 # Launch nwjs
 alias nwjs=/Applications/nwjs.app/Contents/MacOS/nwjs
 
+# no sleep
+alias nosleep='pmset noidle'
+
 # NVM configuration
 source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Go settings
 export GOPATH=$HOME/Go
