@@ -1,18 +1,92 @@
+set nocompatible
+filetype off
+syntax off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'rhysd/committia.vim'
+
+" Zoom into window with <C-w>o
+Plugin 'troydm/zoomwintab.vim'
+
+" Ctrl P
+Plugin 'kien/ctrlp.vim'
+Plugin 'nickhutchinson/ctrlp-luamatcher'
+
+" Dash
+Plugin 'rizzatti/dash.vim'
+
+" Buffergator
+Plugin 'jeetsukumaran/vim-buffergator'
+
+" Editor Config
+Plugin 'editorconfig/editorconfig-vim'
+
+" Emmet
+Plugin 'mattn/emmet-vim'
+
+" Neocomplete
+Plugin 'Shougo/neocomplete.vim'
+
+" Syntastic
+Plugin 'scrooloose/syntastic'
+
+" Required by some plugins
+Plugin 'tomtom/tlib_vim'
+
+" Undo tree visualization
+Plugin 'mbbill/undotree'
+
+" More utility functions
+Plugin 'vim-scripts/vim-addon-mw-utils'
+
+" Airline
+Plugin 'bling/vim-airline'
+
+" fuGITive
+Plugin 'tpope/vim-fugitive'
+
+" Cool substitue replacement
+Plugin 'osyo-manga/vim-over'
+
+" Makes vim play nicely with iTerm 2 and tmux
+Plugin 'sjl/vitality.vim'
+
+" Makes . play nice with other plugins
+Plugin 'tpope/vim-repeat'
+
+" Surround text objects
+Plugin 'tpope/vim-surround'
+
+" Snipmate
+Plugin 'garbas/snipmate.vim'
+
+" Paper color theme
+Plugin 'NLKNguyen/papercolor-theme'
+
+" Better javascript
+Plugin 'pangloss/vim-javascript'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+syntax on
+
 set ruler    " shows ROW,COL at bottom right corner
 set number   " shows line numbers
 " set nowrap " dissables linewrapping
 set background=dark " Soy Darksssss
-
-filetype off
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
 set guifont=Inconsolata\ for\ Powerline
 
 " Saves time
 nmap <space> :
 
-set nocompatible
 set encoding=utf-8
 set showcmd " display incomplete commands
 
@@ -141,11 +215,11 @@ endif
 let g:ctrlp_working_path_mode = 'ra'
 " Ignore some files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*
-let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
+"let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
 
 " Color Scheme
-colorscheme molokai
-let g:molokai_original = 1
+set t_Co=256
+colorscheme PaperColor-Dark
 
 " Remove backup files
 set nobackup       " no backup files
@@ -237,3 +311,16 @@ endfunction
 " COMMIT_EDITMSG buffer is opened. If you use vim-fugitive, I recommend to set this
 " value to 1. The default value is 1.
 let g:committia_open_only_vim_starting=0
+
+" Better javascript syntax
+let g:javascript_enable_domhtmlcss=1
+set cole=1
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "⇚"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "¶"
+let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_super      = "Ω"
