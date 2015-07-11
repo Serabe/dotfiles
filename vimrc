@@ -63,9 +63,6 @@ Plugin 'tpope/vim-repeat'
 " Surround text objects
 Plugin 'tpope/vim-surround'
 
-" Snipmate
-Plugin 'garbas/snipmate.vim'
-
 " Paper color theme
 Plugin 'NLKNguyen/papercolor-theme'
 
@@ -99,7 +96,7 @@ set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType javascript setlocal cinoptions+=+0
+autocmd FileType javascript setlocal cinoptions+=+0 tabstop=2 shiftwidth=2 softtabstop=2
 
 " Keep it sane
 set scrolloff=3
