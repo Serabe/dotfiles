@@ -69,6 +69,12 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Better javascript
 Plugin 'pangloss/vim-javascript'
 
+" Narrow region
+Plugin 'chrisbra/NrrwRgn'
+
+" Official moustache vim plugin
+Plugin 'mustache/vim-mustache-handlebars'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
