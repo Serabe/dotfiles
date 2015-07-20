@@ -222,7 +222,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*
 
 " Color Scheme
 set t_Co=256
-colorscheme PaperColor-Dark
+colorscheme PaperColor
 
 " Remove backup files
 set nobackup       " no backup files
