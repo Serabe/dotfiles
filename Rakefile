@@ -45,14 +45,20 @@ task :symlink_files do
 end
 
 task :install_powerline_fonts do
-    puts "Installing powerline fonts."
-    Dir.mktmpdir do |dir|
-        pwl = "#{dir}/powerline"
-        puts "Downloading powerline fonts"
-        system "git clone git@github.com:Lokaltog/powerline-fonts.git #{pwl}"
-        puts "Copying fonts to system"
-        system "#{pwl}/install.sh"
-        puts "Done"
-    end
+  puts "Installing powerline fonts."
+  Dir.mktmpdir do |dir|
+    pwl = "#{dir}/powerline"
+    puts "Downloading powerline fonts"
+    system "git clone git@github.com:Lokaltog/powerline-fonts.git #{pwl}"
+    puts "Copying fonts to system"
+    system "#{pwl}/install.sh"
+    puts "Done"
+  end
 end
-task :default => [:symlink_files, :install_powerline_fonts]
+
+task :set_up_vundle do
+  `git clone https://github.com/gmarik/Vundle.vim.git ./vim/bundle/Vundle.vim`
+  `vim +PluginInstall +qall`
+end
+
+task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle]
