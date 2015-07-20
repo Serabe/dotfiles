@@ -16,13 +16,25 @@
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
      ;; --------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
-     ;; (git :variables
-     ;;      git-gutter-use-fringe t)
-     ;; markdown
+     (auto-completion :variables
+                      auto-completion-return-key-behaviour 'complete
+                      auto-completion-tab-key-behaviour 'cycle
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-complete-with-key-sequence nil)
+     better-defaults
+     dash
+     evil-snipe
+     elixir
+     (git :variables
+           git-gutter-use-fringe t)
+     html
+     javascript
+     markdown
      ;; org
-     ;; syntax-checking
+     syntax-checking
+     themes-megapack
+     xkcd
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -58,7 +70,8 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
+   dotspacemacs-themes '(material
+                         solarized-light
                          solarized-dark
                          leuven
                          monokai
