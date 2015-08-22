@@ -85,11 +85,6 @@ alias nwjs=/Applications/nwjs.app/Contents/MacOS/nwjs
 # no sleep
 alias nosleep='pmset noidle'
 
-# NVM configuration
-source $(brew --prefix nvm)/nvm.sh
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
 # Go settings
 export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
@@ -106,3 +101,9 @@ export LC_ALL=en_US.UTF-8
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 . `brew --prefix`/etc/profile.d/z.sh
+
+# NVM configuration
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
