@@ -14,6 +14,9 @@ Plugin 'rhysd/committia.vim'
 " Zoom into window with <C-w>o
 Plugin 'troydm/zoomwintab.vim'
 
+" Ack-like plugin
+Plugin 'wincent/ferret'
+
 " Ctrl P
 Plugin 'kien/ctrlp.vim'
 Plugin 'nickhutchinson/ctrlp-luamatcher'
