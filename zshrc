@@ -79,6 +79,11 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+# Ember CLI
+alias e=ember
+alias es="ember s"
+alias eg="ember g"
+
 # Launch nwjs
 alias nwjs=/Applications/nwjs.app/Contents/MacOS/nwjs
 
