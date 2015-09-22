@@ -78,6 +78,10 @@ Plugin 'chrisbra/NrrwRgn'
 " Official moustache vim plugin
 Plugin 'mustache/vim-mustache-handlebars'
 
+" Elixir plugin
+Plugin 'elixir-lang/vim-elixir'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
