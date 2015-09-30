@@ -81,6 +81,9 @@ Plugin 'mustache/vim-mustache-handlebars'
 " Elixir plugin
 Plugin 'elixir-lang/vim-elixir'
 
+" Follow My Lead
+" Type <Leader>fml to see the mappings with leader
+Plugin 'ktonga/vim-follow-my-lead'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
