@@ -62,3 +62,28 @@ task :set_up_vundle do
 end
 
 task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle]
+
+task :brew_tap_backup do
+  puts "Backing up taps"
+  `brew tap > #{file_in_current "brew_taps"}`
+end
+
+task :brew_tap_restore do
+  `cat #{file_in_current "brew_taps"} | xargs -n1 brew tap`
+end
+
+task :brew_formula_backup do
+  puts "Backing up installed formulas"
+  `brew list > #{file_in_current "brew_formulas"}`
+end
+
+task :brew_formula_restore do
+  `brew install $(cat #{file_in_current "brew_formulas"} | tr '\n' ' ')`
+end
+
+task :brew_backup => [:brew_tap_backup, :brew_formula_backup]
+task :brew_restore => [:brew_tap_restore, :brew_formula_restore]
+
+task :backup => [:brew_backup]
+
+task :restore => [:brew_restore]
