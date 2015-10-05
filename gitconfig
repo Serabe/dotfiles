@@ -60,3 +60,5 @@
     ss = stash save
 [help]
 	autocorrect = 1
+[credential]
+	helper = cache --timeout=64800
