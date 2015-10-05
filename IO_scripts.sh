@@ -13,3 +13,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
 
 # Avoid swipe navigate with scrolls in chrome
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+# Repeat letters when holding down
+defaults write -g ApplePressAndHoldEnabled -bool false

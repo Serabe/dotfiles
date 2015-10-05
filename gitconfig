@@ -5,6 +5,7 @@
 	excludesfile = /Users/arbeo/.gitignore
 	quotepath = false
 	autocrlf = input
+	editor = vim
 [github]
 	user = Serabe
 [color]
