@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible " Do not need to preserve old shit
 filetype off
 syntax off
 
@@ -100,39 +100,68 @@ set guifont=Inconsolata\ for\ Powerline
 " Saves time
 nmap <space> :
 
+" Set <leader> key
+let mapleader = ","
+
 set encoding=utf-8
 set showcmd " display incomplete commands
 
 set modelines=0
 
 " Tab settings
-set tabstop=4
+set tabstop=4 " number of visual spaces per TAB
 set shiftwidth=4
-set softtabstop=4
-set expandtab
+set softtabstop=4 " number of spaces in tab when editing
+set expandtab " tabs are spaces
 set backspace=indent,eol,start
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal cinoptions+=+0 tabstop=2 shiftwidth=2 softtabstop=2
 
 " Keep it sane
-set scrolloff=3
 set autoindent
-set showmode
+set cursorline " highlight current line
 set hidden
-set wildmenu
-set wildmode=list:longest
-set visualbell
-set cursorline
-set ttyfast
 set laststatus=2
 set relativenumber
+set scrolloff=3
+set showmode
+set ttyfast
 set undofile
+set visualbell
+set wildmenu " visual autocomplete for menu
+set wildmode=list:longest
+
+" If all letters are lower case, search
+" is case-insensitive. Otherwise, search
+" is case-sesitive
+set ignorecase
+set smartcase
+
+" Global substitution by default
+set gdefault
+
+" Highlight search result as I type
+set hlsearch  " highlight matches
+set incsearch " search as characters are entered
+set showmatch
+
+" Clear current search with , + space
+" clearmatches is needed for region plugin
+nnoremap <leader><space> :nohlsearch<cr>:call clearmatches()<cr>
 
 " Paste toggle for large chunks of text
 set pastetoggle=<F2>
 
-" Set <leader> key
-let mapleader = ","
+set lazyredraw " redraw only when need to (i.e. faster long-executed macros)
+
+" Folding
+set foldenable " enable folding
+set foldlevelstart=2 " first draft
+set foldnestmax=10 " max nesting for folding
+set foldmethod=syntax
+let javaScript_fold=1  " Enable for JavaScript
+let r_syntax_folding=1 " Enable for R
+let ruby_fold=1        " Enable for Ruby
 
 " Copy and paste to system clipboards
 vmap <Leader>y "*y
@@ -149,22 +178,7 @@ imap <Leader><tab> <C-x><C-o>
 nnoremap / /\v
 vnoremap / /\v
 
-" If all letters are lower case, search
-" is case-insensitive. Otherwise, search
-" is case-sesitive
-set ignorecase
-set smartcase
 
-" Global substitution by default
-set gdefault
-
-" Highlight search result as I type
-set incsearch
-set showmatch
-set hlsearch
-
-" Clear current search with , + space
-nnoremap <leader><space> :nohlsearch<cr>:call clearmatches()<cr>
 
 " Use tab instead of % to match bracket pairs
 nnoremap <tab> %
