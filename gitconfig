@@ -2,7 +2,7 @@
 	name = Sergio Arbeo
 	email = serabe@gmail.com
 [core]
-	excludesfile = /Users/arbeo/.gitignore
+	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
 	editor = vim
