@@ -156,7 +156,7 @@ set lazyredraw " redraw only when need to (i.e. faster long-executed macros)
 
 " Folding
 set foldenable " enable folding
-set foldlevelstart=2 " first draft
+set foldlevelstart=10 " first draft
 set foldnestmax=10 " max nesting for folding
 set foldmethod=syntax
 let javaScript_fold=1  " Enable for JavaScript
