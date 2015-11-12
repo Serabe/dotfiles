@@ -64,7 +64,6 @@ hub
 icu4c
 imagemagick
 imap-uw
-io
 isl
 isl011
 jasper
@@ -84,10 +83,10 @@ liblwgeom
 libmpc
 libogg
 libpng
-libreadline-java
 libsigsegv
 libsndfile
 libspatialite
+libssh2
 libtiff
 libtool
 libvo-aacenc
@@ -113,11 +112,11 @@ multimarkdown
 mysql
 neo4j
 neon
+neovim
 nginx
 ngrok
 nmap
 nvm
-objective-caml
 ocaml
 oniguruma
 openjpeg
@@ -127,7 +126,6 @@ ossp-uuid
 pandoc
 pango
 pcre
-phantomjs
 pidof
 pixman
 pkg-config
@@ -154,6 +152,7 @@ subversion
 swig
 tbb
 texi2html
+texinfo
 the_silver_searcher
 thefuck
 tig
