@@ -49,7 +49,7 @@ task :install_powerline_fonts do
   Dir.mktmpdir do |dir|
     pwl = "#{dir}/powerline"
     puts "Downloading powerline fonts"
-    system "git clone git@github.com:Lokaltog/powerline-fonts.git #{pwl}"
+    system "git clone https://github.com/powerline/fonts.git #{pwl}"
     puts "Copying fonts to system"
     system "#{pwl}/install.sh"
     puts "Done"
