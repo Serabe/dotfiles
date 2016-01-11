@@ -227,6 +227,9 @@ if has("autocmd")
   au InsertLeave * match ExtraWhiteSpace /\s\+$/
 endif
 
+" associate *.foo with php filetype
+au BufRead,BufNewFile *.js.es6 setfiletype javascript
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:→\ ,eol:⁋
 
