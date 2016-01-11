@@ -83,6 +83,7 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bi
 alias e=ember
 alias es="ember s"
 alias eg="ember g"
+alias ets="ember test --server"
 
 # Launch nwjs
 alias nwjs=/Applications/nwjs.app/Contents/MacOS/nwjs
