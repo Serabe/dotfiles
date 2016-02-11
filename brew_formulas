@@ -25,7 +25,6 @@ datomic
 docbook
 docbook-xsl
 docker
-elixir
 emacs
 emacs-mac
 erlang
@@ -48,6 +47,7 @@ git
 git-extras
 git-flow
 git-now
+git-town
 glib
 gmp
 gmp4
@@ -95,7 +95,7 @@ libxml2
 libxslt
 libyaml
 little-cms2
-llvm33
+llvm
 lua
 luajit
 lzlib
@@ -107,7 +107,6 @@ mercurial
 mhash
 mongodb
 mpfr
-mr
 multimarkdown
 mysql
 neo4j
@@ -136,6 +135,7 @@ proj
 python
 python3
 q
+qcachegrind
 qt
 r
 readline
