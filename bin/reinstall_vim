@@ -1,0 +1,2 @@
+#!/bin/bash
+brew reinstall vim --with-lua --with-python3
