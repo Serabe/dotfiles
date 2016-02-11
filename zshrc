@@ -115,3 +115,6 @@ source $(brew --prefix nvm)/nvm.sh
 
 # The fuck
 eval "$(thefuck --alias)"
+
+# Kiex
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
