@@ -1,2 +1,2 @@
 #!/bin/bash
-brew reinstall vim --with-lua --with-python3
+brew reinstall vim --with-lua --with-python3 --override-system-vi
