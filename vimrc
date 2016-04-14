@@ -76,7 +76,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'chrisbra/NrrwRgn'
 
 " Official moustache vim plugin
-Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'mustache/vim-mustache-handlebars'
+
+Plugin 'joukevandermaas/vim-ember-hbs'
 
 " Elixir plugin
 Plugin 'elixir-lang/vim-elixir'
@@ -252,7 +254,7 @@ endif
 " 0 or '' (empty string) - disable this feature.
 let g:ctrlp_working_path_mode = 'ra'
 " Ignore some files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*,*/public/spree/*
 "let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
 
 " Color Scheme
