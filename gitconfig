@@ -5,7 +5,7 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
-	editor = vim
+	editor = /usr/local/bin/vim
 [github]
 	user = Serabe
 [color]
@@ -68,3 +68,5 @@
 	insteadOf = git://
 [commit]
 	template = /Users/serabe/.git_commit_message.txt
+[init]
+	templatedir = ~/.git_template
