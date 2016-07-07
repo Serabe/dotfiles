@@ -66,7 +66,20 @@ task :set_neovim do
   `ln -s ~/.vimrc ~/.config/nvim/init.vim`
 end
 
-task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle, :set_neovim]
+task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle, :set_neovim, :custom_zsh_plugins]
+
+task :custom_zsh_plugins do
+  puts "Adding custom plugins to oh my zsh"
+  [
+    ['elixir', 'https://github.com/gusaiani/elixir-oh-my-zsh.git']
+  ].each do |plugin|
+    path_for_plugin = "~/.oh-my-zsh/custom/plugins/#{plugin.first}"
+    unless File.exists? path_for_plugin
+      puts "Cloning #{plugin.last} into #{path_for_plugin}"
+      `git clone #{plugin.last} #{path_for_plugin}`
+    end
+  end
+end
 
 task :brew_tap_backup do
   puts "Backing up taps"
