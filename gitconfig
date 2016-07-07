@@ -64,9 +64,9 @@
 [credential]
 	helper = cache --timeout=64800
 # Only in Chennai
-[url "https://"]
-	insteadOf = git://
 [commit]
 	template = /Users/serabe/.git_commit_message.txt
 [init]
 	templatedir = ~/.git_template
+[diff]
+	compactionHeuristic = true

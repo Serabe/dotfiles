@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # After @porras one-liner, comes the remote version.
-git branch -r --merged | grep feature |  sed 's/origin\//:/' | xargs -n 1 git push origin
+git branch -r --merged | grep -v develop | grep -v master | grep 'feature\|bug\|fix' |  sed 's/origin\///' | tr '\n' ' ' | xargs git push origin --delete

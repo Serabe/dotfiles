@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+
+def git_format format, branch
+  `git log -n 1 --pretty=format:"#{format}" #{branch}`
+end
+
+def git_author branch
+  git_format "%an", branch
+end
+
+def git_date branch
+  git_format "%ad", branch
+end
+
+def git_subject branch
+  git_format "%s", branch
+end
+
+def git_remote_branches
+  branches = `git branch -r`
+  branches.lines.map do |branch|
+    branch.strip[/^\S+/]
+  end
+end
+
+output = StringIO.new
+
+csv = CSV.new output, force_quotes: true
+
+git_remote_branches.each do |branch|
+  csv << [branch, git_author(branch), git_date(branch), git_subject(branch)]
+end
+
+puts output.string
+
+# vim: set filetype=ruby

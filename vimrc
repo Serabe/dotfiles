@@ -29,12 +29,14 @@ Plugin 'jeetsukumaran/vim-buffergator'
 
 " Editor Config
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-scripts/PreserveNoEOL'
 
 " Emmet
 Plugin 'mattn/emmet-vim'
 
 " Neocomplete
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Konfekt/FastFold'
 
 " Syntastic
 Plugin 'scrooloose/syntastic'
@@ -49,7 +51,8 @@ Plugin 'mbbill/undotree'
 Plugin 'vim-scripts/vim-addon-mw-utils'
 
 " Airline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " fuGITive
 Plugin 'tpope/vim-fugitive'
@@ -75,9 +78,14 @@ Plugin 'pangloss/vim-javascript'
 " Narrow region
 Plugin 'chrisbra/NrrwRgn'
 
+" Easy Motion
+Plugin 'easymotion/vim-easymotion'
+
+" Tagbar
+Plugin 'majutsushi/tagbar'
+
 " Official moustache vim plugin
 " Plugin 'mustache/vim-mustache-handlebars'
-
 Plugin 'joukevandermaas/vim-ember-hbs'
 
 " Elixir plugin
@@ -117,7 +125,10 @@ set softtabstop=4 " number of spaces in tab when editing
 set expandtab " tabs are spaces
 set backspace=indent,eol,start
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal cinoptions+=+0 tabstop=2 shiftwidth=2 softtabstop=2
+
+au BufRead,BufNewFile *.deface set filetype=eruby
 
 " Keep it sane
 set autoindent
@@ -256,6 +267,9 @@ let g:ctrlp_working_path_mode = 'ra'
 " Ignore some files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*,*/dist/*,*/cordova/*,*/public/spree/*
 "let g:ctrlp_match_func = { 'match': 'ctrlp#luamatcher#Match' }
+
+" Tagbar
+nmap <leader>t :TagbarToggle<CR>
 
 " Color Scheme
 set t_Co=256

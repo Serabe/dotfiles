@@ -45,7 +45,7 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp gem git git-flow gitignore lein marked2 postgres rails rvm sublime)
+plugins=(atom bower brew bundler capistrano cp gem git git-flow gitignore lein marked2 npm postgres rails rvm sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,8 +81,9 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bi
 #
 # Ember CLI
 alias e=ember
-alias es="ember s"
+alias efsa="ember fastboot --serve-assets"
 alias eg="ember g"
+alias es="ember s"
 alias ets="ember test --server"
 
 # Launch nwjs
@@ -118,3 +119,12 @@ eval "$(thefuck --alias)"
 
 # Kiex
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+# Rails alias
+alias rcs="rails console --sandbox"
+
+# Find BOM
+alias find_bom="grep -rl $'\xEF\xBB\xBF' ."
+
+# Check PRs
+alias git-pr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
