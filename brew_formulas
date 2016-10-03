@@ -2,6 +2,7 @@ ack
 ant
 asciidoc
 aspell
+augeas
 autoconf
 automake
 bison
@@ -10,6 +11,7 @@ brew-cask
 cairo
 camlp5
 casperjs
+certbot
 cgal
 clisp
 cloog
@@ -22,11 +24,15 @@ cscope
 ctags
 curl
 datomic
+dialog
 docbook
 docbook-xsl
 docker
+doxygen
+elixir
 emacs
 emacs-mac
+enca
 erlang
 faac
 ffmpeg
@@ -39,12 +45,12 @@ gcc
 gd
 gdal
 gdbm
+gdk-pixbuf
 geos
 gettext
 ghostscript
 giflib
 git
-git-extras
 git-flow
 git-now
 git-town
@@ -73,6 +79,8 @@ jq
 json-c
 lame
 leiningen
+letsencrypt
+libcroco
 libevent
 libffi
 libgeotiff
@@ -83,6 +91,7 @@ liblwgeom
 libmpc
 libogg
 libpng
+librsvg
 libsigsegv
 libsndfile
 libspatialite
@@ -108,12 +117,11 @@ mhash
 mongodb
 mpfr
 multimarkdown
-mysql
+mysql56
 neo4j
 neon
 neovim
 nginx
-ngrok
 nmap
 nvm
 ocaml
@@ -125,6 +133,7 @@ ossp-uuid
 pandoc
 pango
 pcre
+phantomjs
 pidof
 pixman
 pkg-config
@@ -137,6 +146,8 @@ python3
 q
 qcachegrind
 qt
+qt5
+qt55
 r
 readline
 redis
@@ -151,6 +162,7 @@ sqlite
 subversion
 swig
 tbb
+terminal-notifier
 texi2html
 texinfo
 the_silver_searcher
@@ -161,8 +173,10 @@ tree
 unixodbc
 unoconv
 unrar
+v8
 vim
 watchman
+webp
 wget
 wxmac
 x264

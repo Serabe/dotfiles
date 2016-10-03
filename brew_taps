@@ -1,4 +1,6 @@
 caskroom/cask
+homebrew/boneyard
+homebrew/core
 homebrew/dupes
 homebrew/science
 homebrew/versions
