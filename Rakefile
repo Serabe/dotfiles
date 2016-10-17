@@ -92,7 +92,7 @@ end
 
 task :brew_formula_backup do
   puts "Backing up installed formulas"
-  `brew list > #{file_in_current "brew_formulas"}`
+  `brew list --full-name> #{file_in_current "brew_formulas"}`
 end
 
 task :brew_formula_restore do

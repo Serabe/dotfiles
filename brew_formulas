@@ -7,7 +7,6 @@ autoconf
 automake
 bison
 boost
-brew-cask
 cairo
 camlp5
 casperjs
@@ -15,7 +14,6 @@ certbot
 cgal
 clisp
 cloog
-cloog018
 closure-compiler
 cmake
 coq
@@ -31,7 +29,6 @@ docker
 doxygen
 elixir
 emacs
-emacs-mac
 enca
 erlang
 faac
@@ -56,13 +53,11 @@ git-now
 git-town
 glib
 gmp
-gmp4
 gnu-getopt
 gnupg
 gnuplot
 go
 gobject-introspection
-gotty
 gpp
 graphviz
 harfbuzz
@@ -71,7 +66,6 @@ icu4c
 imagemagick
 imap-uw
 isl
-isl011
 jasper
 jbig2dec
 jpeg
@@ -79,13 +73,11 @@ jq
 json-c
 lame
 leiningen
-letsencrypt
 libcroco
 libevent
 libffi
 libgeotiff
 libgpg-error
-libiconv
 libksba
 liblwgeom
 libmpc
@@ -117,10 +109,8 @@ mhash
 mongodb
 mpfr
 multimarkdown
-mysql56
 neo4j
 neon
-neovim
 nginx
 nmap
 nvm
@@ -147,8 +137,6 @@ q
 qcachegrind
 qt
 qt5
-qt55
-r
 readline
 redis
 repl
@@ -190,5 +178,15 @@ yajl
 yasm
 youtube-dl
 z
-zlib
 zsh
+homebrew/dupes/libiconv
+homebrew/dupes/zlib
+homebrew/science/r
+homebrew/versions/cloog018
+homebrew/versions/gmp4
+homebrew/versions/isl011
+homebrew/versions/mysql56
+homebrew/versions/qt55
+neovim/neovim/neovim
+railwaycat/emacsmacport/emacs-mac
+yudai/gotty/gotty
