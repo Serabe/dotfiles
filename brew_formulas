@@ -157,6 +157,7 @@ rust
 scala
 scons
 sfcgal
+shared-mime-info
 solr
 sqlite
 subversion
@@ -169,10 +170,12 @@ the_silver_searcher
 thefuck
 tig
 tmux
+trash
 tree
 unixodbc
 unoconv
 unrar
+utf8proc
 v8
 vim
 watchman
