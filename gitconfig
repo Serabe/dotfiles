@@ -62,7 +62,7 @@
 [help]
 	autocorrect = 1
 [credential]
-	helper = cache --timeout=64800
+	helper = osxkeychain
 # Only in Chennai
 [commit]
 	template = /Users/serabe/.git_commit_message.txt

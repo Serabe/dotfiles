@@ -1,5 +1,7 @@
 ack
 ant
+apr
+apr-util
 asciidoc
 aspell
 augeas
@@ -23,6 +25,7 @@ ctags
 curl
 datomic
 dialog
+dirmngr
 docbook
 docbook-xsl
 docker
@@ -55,12 +58,15 @@ glib
 gmp
 gnu-getopt
 gnupg
+gnupg2
 gnuplot
 go
 gobject-introspection
+gpg-agent
 gpp
 graphviz
 harfbuzz
+highlight
 hub
 icu4c
 imagemagick
@@ -73,9 +79,11 @@ jq
 json-c
 lame
 leiningen
+libassuan
 libcroco
 libevent
 libffi
+libgcrypt
 libgeotiff
 libgpg-error
 libksba
@@ -90,6 +98,8 @@ libspatialite
 libssh2
 libtiff
 libtool
+libusb
+libusb-compat
 libvo-aacenc
 libvorbis
 libxml2
@@ -118,6 +128,7 @@ ocaml
 oniguruma
 openjpeg
 openssl
+openssl@1.1
 optipng
 ossp-uuid
 pandoc
@@ -125,17 +136,18 @@ pango
 pcre
 phantomjs
 pidof
+pinentry
 pixman
 pkg-config
 poppler
 postgis
 postgresql
 proj
+pth
 python
 python3
 q
 qcachegrind
-qt
 qt5
 readline
 redis
@@ -179,6 +191,7 @@ yasm
 youtube-dl
 z
 zsh
+go-delve/delve/delve
 homebrew/dupes/libiconv
 homebrew/dupes/zlib
 homebrew/science/r
@@ -186,7 +199,6 @@ homebrew/versions/cloog018
 homebrew/versions/gmp4
 homebrew/versions/isl011
 homebrew/versions/mysql56
-homebrew/versions/qt55
 neovim/neovim/neovim
 railwaycat/emacsmacport/emacs-mac
 yudai/gotty/gotty

@@ -45,7 +45,7 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp elixir gem git git-flow gitignore lein marked2 npm postgres rails rvm sublime)
+plugins=(atom bower brew bundler capistrano cp elixir gem git git-flow gitignore go lein marked2 npm postgres rails rvm sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,3 +128,19 @@ alias find_bom="grep -rl $'\xEF\xBB\xBF' ."
 
 # Check PRs
 alias git-pr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
+
+# Go
+export GOPATH=$HOME/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/serabe/Downloads/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/serabe/Downloads/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/serabe/Downloads/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/serabe/Downloads/google-cloud-sdk/completion.zsh.inc'
+fi

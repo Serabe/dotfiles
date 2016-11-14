@@ -95,6 +95,12 @@ Plugin 'elixir-lang/vim-elixir'
 " Type <Leader>fml to see the mappings with leader
 Plugin 'ktonga/vim-follow-my-lead'
 
+" Vim Go
+Plugin 'fatih/vim-go'
+
+" GraphQL
+Plugin 'jparise/vim-graphql'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 

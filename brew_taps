@@ -1,4 +1,21 @@
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core, homebrew/versions).
+==> Updated Formulae
+archi-steam-farm
+armor
+dcraw
+glm
+grib-api
+homebrew/versions/node4-lts
+i2p
+jasper
+libicns
+libraw
+netpbm
+youtube-dl
+
 caskroom/cask
+go-delve/delve
 homebrew/boneyard
 homebrew/core
 homebrew/dupes
