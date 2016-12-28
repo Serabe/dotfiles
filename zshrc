@@ -144,3 +144,7 @@ fi
 if [ -f /Users/serabe/Downloads/google-cloud-sdk/completion.zsh.inc ]; then
   source '/Users/serabe/Downloads/google-cloud-sdk/completion.zsh.inc'
 fi
+
+# Use nvim by default
+alias ovim=$(~/.bin/find_path vim)
+alias vim=nvim
