@@ -74,6 +74,9 @@ Plug 'joukevandermaas/vim-ember-hbs'
 " Type <Leader>fml to see the mappings with leader
 Plug 'ktonga/vim-follow-my-lead'
 
+" Oceanic theme
+Plug 'mhartington/oceanic-next'
+
 call plug#end()
 
 set ruler    " shows ROW,COL at bottom right corner
@@ -217,9 +220,14 @@ set listchars=tab:→\ ,eol:⁋
 "  autocmd bufwritepost init.vim source $MYVIMRC
 "endif
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 " Color Scheme
 set t_Co=256
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme OceanicNext
 
 " Remove backup files
 set nobackup       " no backup files
@@ -310,7 +318,8 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline_theme='molokai'
+"let g:airline_theme='molokai'
+let g:airline_theme='oceanicnext'
 
 " Cursor shape temporary measure
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
