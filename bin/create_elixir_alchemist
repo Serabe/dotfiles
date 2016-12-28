@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -rf ~/.config/alchemist/autocomplete
+mkdir -p ~/.config/alchemist/autocomplete
+ln -s ~/.kiex/builds/elixir-git ~/.config/alchemist/autocomplete/elixir
+git clone --branch maint-$(erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell | cut -d "\"" -f 2) --single-branch --depth 1 git@github.com:erlang/otp.git ~/.config/alchemist/autocomplete/otp
