@@ -29,7 +29,8 @@ end
 DO_NOTHING = [
   "Rakefile",
   "README.md",
-  "LICENSE"
+  "LICENSE",
+  "config"
 ]
 
 task :symlink_files do
@@ -42,6 +43,7 @@ task :symlink_files do
   end.each do |f|
     symlink_file f
   end
+  FileList["config/*"].to_a.each { |f| symlink_file f }
 end
 
 task :install_powerline_fonts do
