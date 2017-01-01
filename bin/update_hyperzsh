@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -o ~/.oh-my-zsh/themes/hyperzsh.zsh-theme https://raw.githubusercontent.com/tylerreckart/hyperzsh/master/hyperzsh.zsh-theme

@@ -16,3 +16,4 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
 # Repeat letters when holding down
 defaults write -g ApplePressAndHoldEnabled -bool false
+
