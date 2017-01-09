@@ -237,7 +237,7 @@ set noswapfile     " no swap files
 " Persistent undo
 " This makes all *.un~ files to be stored in ~/.undodir
 if has("persistent_undo")
-    set undodir='~/.undodir/'
+    set undodir="~/.undodir/"
     set undofile
 endif
 
