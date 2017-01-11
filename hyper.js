@@ -110,6 +110,7 @@ module.exports = {
     'hyperterm-install-devtools',
     'hyperminimal',
     'hyperterm-oceanic-next',
+    'hyperterm-open-devtools',
     'hyperterm-tab-icons',
     'hyperterm-tabs',
   ],
