@@ -1,3 +1,6 @@
 vim/.netrwbook
 config/nvim/plugged
 
+
+bin/protoc
+
