@@ -5,7 +5,7 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
-	editor = /usr/local/bin/vim
+	editor = /usr/local/bin/nvim
 [github]
 	user = Serabe
 [color]
