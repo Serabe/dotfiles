@@ -38,7 +38,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Go
 Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 
 " Git gutter
 Plug 'airblade/vim-gitgutter'
@@ -63,7 +63,7 @@ Plug 'tpope/vim-surround'
 " Better javascript
 Plug 'pangloss/vim-javascript'
 
-" Narrow region
+" Narrow region ,nr
 Plug 'chrisbra/NrrwRgn'
 
 " Official moustache vim plugin
@@ -277,7 +277,7 @@ endfunction
 " If the value is 0, committia.vim always attempts to open committia's buffer when
 " COMMIT_EDITMSG buffer is opened. If you use vim-fugitive, I recommend to set this
 " value to 1. The default value is 1.
-let g:committia_open_only_vim_starting=0
+let g:committia_open_only_vim_starting=1
 
 " CtrlP
 
@@ -301,6 +301,11 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " minimum syntax keyword length
 let g:deoplete#sources#syntax#min_keyword_length = 3
+" deoplete-go
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 1
+let g:deoplete#sources#go#json_directory = '/path/to/data_dir'
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " Enable omni completion.
