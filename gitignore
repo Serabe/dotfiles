@@ -12,6 +12,7 @@
 *.swp
 *.swo
 .netrwhist
+NetrwTreeListing*
 
 # emacs temp files
 *~
@@ -28,3 +29,6 @@ tags
 log/
 db/*.sqlite3
 tmp/
+
+# Yarn
+yarn-error.log
