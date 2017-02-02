@@ -152,3 +152,6 @@ fi
 # Use nvim by default
 alias ovim=$(~/.bin/find_path vim)
 alias vim=nvim
+
+# Easy PR
+alias pr='f() { git fetch upstream && git checkout pr/"$1"; }; f'
