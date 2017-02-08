@@ -51,9 +51,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc' " For better documentation display
 
-" Cool substitue replacement
-Plug 'osyo-manga/vim-over'
-
 " Makes . play nice with other plugins
 Plug 'tpope/vim-repeat'
 
@@ -234,6 +231,9 @@ set nobackup       " no backup files
 set nowritebackup  " only in case you don't want a backup file while editing
 set noswapfile     " no swap files
 
+" See replace incrementally
+set inccommand=nosplit
+
 " Persistent undo
 " This makes all *.un~ files to be stored in ~/.undodir
 if has("persistent_undo")
@@ -333,18 +333,6 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:alchemist#elixir_erlang_src = "~/.config/alchemist/autocomplete"
 let g:alchemist_iex_term_size = 15
 let g:alchemist_iex_term_split = 'split'
-
-" Over functions
-function! VisualFindAndReplace()
-    :OverCommandLine%s/
-    :w
-endfunction
-function! VisualFindAndReplaceWithSelection() range
-    :'<,'>OverCommandLine s/
-    :w
-endfunction
-nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
-xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 
 " Better javascript syntax
 let g:javascript_enable_domhtmlcss=1
