@@ -1,0 +1,28 @@
+#!/bin/sh
+# This hook checks if the last commit of the branch you are checking out is authored
+# by the current configured user and, if so and the message is wip, it resets to the
+# previous commit.
+
+# $1 is the previous commit
+# $2 is the target commit
+# $3 is 1 if it is a branch checkout or 0 if it is a file checkout
+
+if [ $3 == "1" ]; then # if it is a branch checkout
+    wip_subject="(wip)|(WIP)"
+
+    last_commit_author_name=`git log -n 1 --format=format:%an $2`
+    me=`git config user.name`
+
+    if [ "$last_commit_author_name" == "$me" ]; then
+        last_msg=`git log -n 1 --format=format:%s $2`
+        if [[ $last_msg =~ $wip_subject ]]; then
+            echo "$(tput setaf 6)Detected last commit as WIP. Resetting it.$(tput sgr 0)"
+            git reset $2~1
+        fi
+        unset last_msg
+    fi
+
+    unset last_commit_author_name
+    unset me
+    unset wip_subject
+fi
