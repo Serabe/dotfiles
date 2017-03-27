@@ -85,6 +85,7 @@ set guifont=Inconsolata\ for\ Powerline
 
 " Saves time
 nmap <space> :
+vmap <space> :
 
 " Set <leader> key
 let mapleader = ","
@@ -346,3 +347,8 @@ let g:javascript_conceal_NaN        = "ℕ"
 let g:javascript_conceal_prototype  = "¶"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
+
+" FixMyJS config
+" let g:fixmyjs_us_local = 1
+" let g:fixmyjs_use_rc_closest_to_file = 1
+" let g:fixmyjs_rc_filename = ".eslintrc.js"
