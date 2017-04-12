@@ -74,6 +74,12 @@ Plug 'ktonga/vim-follow-my-lead'
 " Oceanic theme
 Plug 'mhartington/oceanic-next'
 
+" Disapprove Deep indentation ಠ_ಠ
+Plug 'dodie/vim-disapprove-deep-indentation'
+
+" Ember Layout
+Plug 'sukima/vim-emberlayout'
+
 call plug#end()
 
 set ruler    " shows ROW,COL at bottom right corner
@@ -346,3 +352,6 @@ let g:javascript_conceal_NaN        = "ℕ"
 let g:javascript_conceal_prototype  = "¶"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
+
+" Git gutter options
+let g:gitgutter_diff_args = '-w'
