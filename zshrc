@@ -155,3 +155,6 @@ alias vim=nvim
 
 # Easy PR
 alias gpr='f() { git fetch upstream && git checkout pr/"$1"; }; f'
+
+# Easy WIP
+alias gwip='git add -A && git commit -m "WIP"'
