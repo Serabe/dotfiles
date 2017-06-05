@@ -49,7 +49,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp elixir fancy-ctrl-z gem git git-flow gitignore golang lein marked2 npm osx postgres rails rvm sublime)
+plugins=(atom bower brew bundler capistrano cp dotenv elixir fancy-ctrl-z gem git git-flow gitignore golang lein marked2 npm osx postgres rails rvm sublime)
 
 source $ZSH/oh-my-zsh.sh
 
