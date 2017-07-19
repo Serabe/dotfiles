@@ -32,3 +32,6 @@ tmp/
 
 # Yarn
 yarn-error.log
+
+# VSCode
+.vscode
