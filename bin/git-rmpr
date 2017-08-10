@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Remove all pr branches
+git branch | grep -Gv '*' | grep "\s*pr/" | xargs git branch -D
