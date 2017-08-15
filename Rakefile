@@ -2,6 +2,10 @@ require 'rake'
 require 'erb'
 require 'tmpdir'
 
+EXCEPTIONS = {
+  "vscode.settings.json" => File.expand_path("~/Library/Application Support/Code/User/settings.json")
+}
+
 def file_in_home(name)
   File.join File.expand_path(ENV['HOME']), ".#{name}"
 end
@@ -10,26 +14,36 @@ def file_in_current(name)
   File.join __dir__, name
 end
 
+def file_dest(name)
+  if EXCEPTIONS.has_key? name
+    EXCEPTIONS[name]
+  else
+    file_in_home(name)
+  end
+end
+
 def needs_backup f
   File.exist?(f) && !File.symlink?(f)
 end
 
 def backup_if_needed f
-  home_file = file_in_home f
-  puts "Backing up #{home_file}"
-  FileUtils.mv(home_file, home_file + ".old") if needs_backup home_file
+  dest = file_dest f
+  puts "Backing up #{dest}"
+  FileUtils.mv(dest, dest + ".old") if needs_backup dest
 end
 
 def symlink_file f
   backup_if_needed f
-  puts "Symlinking #{f}"
-  FileUtils.ln_s file_in_current(f), file_in_home(f) unless File.exists?(file_in_home(f))
+  dest = file_dest(f)
+  puts "Symlinking #{f} to #{dest}"
+  FileUtils.ln_s file_in_current(f), dest unless File.exists?(dest)
 end
 
 DO_NOTHING = [
-  "Rakefile",
-  "README.md",
+  "Brewfile",
   "LICENSE",
+  "README.md",
+  "Rakefile",
   "config"
 ]
 
