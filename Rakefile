@@ -44,7 +44,8 @@ DO_NOTHING = [
   "LICENSE",
   "README.md",
   "Rakefile",
-  "config"
+  "config",
+  "vscode_extensions"
 ]
 
 task :symlink_files do
@@ -92,6 +93,17 @@ task :brew_restore do
   `brew bundle`
 end
 
-task :backup => [:brew_backup]
+task :vscode_extensions_backup do
+  `code --list-extensions > #{file_in_current "vscode_extensions"}`
+end
 
-task :restore => [:brew_restore]
+task :vscode_extensions_restore do
+  File.foreach file_in_current("vscode_extensions") do |ext|
+    puts "Installing VSCode extension #{ext}..."
+    `code --install-extension #{ext}`
+  end
+end
+
+task :backup => [:brew_backup, :vscode_extensions_backup]
+
+task :restore => [:brew_restore, :vscode_extensions_restore]
