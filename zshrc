@@ -1,57 +1,57 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 if [ $TERM_PROGRAM = "Hyper" ]; then
     ZSH_THEME="hyperzsh"
 else
-    ZSH_THEME="spaceship"
+    # Spaceship theme
+    zplug 'denysdovhan/spaceship-zsh-theme', use:spaceship.zsh, from:github, as:theme
 fi
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+zplug zsh-users/zsh-syntax-highlighting
+zplug zsh-users/zsh-completions
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Elixir plugin
+zplug 'gusaiani/elixir-oh-my-zsh', as:plugin, from:github, use:elixir.plugin.zsh
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# oh-my-zsh plugins
+zplug 'lib/completion', as:plugin, from:oh-my-zsh
+zplug 'lib/key-bindings', as:plugin, from:oh-my-zsh
+zplug 'lib/nvm', as:plugin, from:oh-my-zsh
+zplug 'lib/theme-and-appearance', as:plugin, from:oh-my-zsh
+zplug 'plugins/atom', as:plugin, from:oh-my-zsh
+zplug 'plugins/bower', as:plugin, from:oh-my-zsh
+zplug 'plugins/brew', as:plugin, from:oh-my-zsh
+zplug 'plugins/bundler', as:plugin, from:oh-my-zsh
+zplug 'plugins/capistrano', as:plugin, from:oh-my-zsh
+zplug 'plugins/cp', as:plugin, from:oh-my-zsh
+zplug 'plugins/dotenv', as:plugin, from:oh-my-zsh
+zplug 'plugins/fancy-ctrl-z', as:plugin, from:oh-my-zsh
+zplug 'plugins/gem', as:plugin, from:oh-my-zsh
+zplug 'plugins/git', as:plugin, from:oh-my-zsh
+zplug 'plugins/git-flow', as:plugin, from:oh-my-zsh
+zplug 'plugins/gitignore', as:plugin, from:oh-my-zsh
+zplug 'plugins/golang', as:plugin, from:oh-my-zsh
+zplug 'plugins/lein', as:plugin, from:oh-my-zsh
+zplug 'plugins/marked2', as:plugin, from:oh-my-zsh
+zplug 'plugins/npm', as:plugin, from:oh-my-zsh
+zplug 'plugins/osx', as:plugin, from:oh-my-zsh
+zplug 'plugins/postgres', as:plugin, from:oh-my-zsh
+zplug 'plugins/rails', as:plugin, from:oh-my-zsh
+zplug 'plugins/rvm', as:plugin, from:oh-my-zsh
+zplug 'plugins/sublime', as:plugin, from:oh-my-zsh
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp dotenv fancy-ctrl-z gem git git-flow gitignore golang lein marked2 npm osx postgres rails rvm sublime)
-
-source $ZSH/oh-my-zsh.sh
+# Then, source plugins and add commands to $PATH
+zplug load
 
 # User configuration
 
@@ -158,27 +158,6 @@ alias gpr='f() { git fetch upstream && git checkout pr/"$1"; }; f'
 
 # Easy WIP
 alias gwip='git add -A && git commit -m "WIP [skip ci]"'
-
-# zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-# Spaceship theme
-zplug 'denysdovhan/spaceship-zsh-theme', use:spaceship.zsh, from:github, as:theme
-
-# Elixir plugin
-zplug 'gusaiani/elixir-oh-my-zsh', as:plugin, from:github, use:elixir.plugin.zsh
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
 
 # SPACESHIP CONFIG
 SPACESHIP_EXIT_CODE_SHOW=true
