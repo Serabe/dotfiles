@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 if [ $TERM_PROGRAM = "Hyper" ]; then
     ZSH_THEME="hyperzsh"
 else
-    ZSH_THEME="juanghurtado"
+    ZSH_THEME="spaceship"
 fi
 
 # Uncomment the following line to use case-sensitive completion.
@@ -158,3 +158,22 @@ alias gpr='f() { git fetch upstream && git checkout pr/"$1"; }; f'
 
 # Easy WIP
 alias gwip='git add -A && git commit -m "WIP [skip ci]"'
+
+
+source "/Users/serabe/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# SPACESHIP CONFIG
+SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_HG_SHOW=false
+SPACESHIP_HG_BRANCH_SHOW=false
+SPACESHIP_HG_STATUS_SHOW=false
+SPACESHIP_XCODE_SHOW_LOCAL=false
+SPACESHIP_SWIFT_SHOW_LOCAL=false
+SPACESHIP_PHP_SHOW=false
+SPACESHIP_HASKELL_SHOW=false
+SPACESHIP_JULIA_SHOW=false
+SPACESHIP_AWS_SHOW=false
+SPACESHIP_VENV_SHOW=false
+SPACESHIP_PYENV_SHOW=false
+SPACESHIP_DOTNET_SHOW=false

@@ -72,6 +72,7 @@ task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle, :set
 
 task :custom_zsh_plugins do
   puts "Adding custom plugins to oh my zsh"
+  `npm install -g spaceship-zsh-theme`
   [
     ['elixir', 'https://github.com/gusaiani/elixir-oh-my-zsh.git']
   ].each do |plugin|
