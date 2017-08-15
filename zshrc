@@ -49,7 +49,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew bundler capistrano cp dotenv elixir fancy-ctrl-z gem git git-flow gitignore golang lein marked2 npm osx postgres rails rvm sublime)
+plugins=(atom bower brew bundler capistrano cp dotenv fancy-ctrl-z gem git git-flow gitignore golang lein marked2 npm osx postgres rails rvm sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -159,8 +159,26 @@ alias gpr='f() { git fetch upstream && git checkout pr/"$1"; }; f'
 # Easy WIP
 alias gwip='git add -A && git commit -m "WIP [skip ci]"'
 
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-source "/Users/serabe/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+# Spaceship theme
+zplug 'denysdovhan/spaceship-zsh-theme', use:spaceship.zsh, from:github, as:theme
+
+# Elixir plugin
+zplug 'gusaiani/elixir-oh-my-zsh', as:plugin, from:github, use:elixir.plugin.zsh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
 
 # SPACESHIP CONFIG
 SPACESHIP_EXIT_CODE_SHOW=true
