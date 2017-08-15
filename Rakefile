@@ -68,42 +68,15 @@ task :set_neovim do
   `ln -s ~/.vimrc ~/.config/nvim/init.vim`
 end
 
-task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle, :set_neovim, :custom_zsh_plugins]
+task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle, :set_neovim]
 
-task :custom_zsh_plugins do
-  puts "Adding custom plugins to oh my zsh"
-  `npm install -g spaceship-zsh-theme`
-  [
-    ['elixir', 'https://github.com/gusaiani/elixir-oh-my-zsh.git']
-  ].each do |plugin|
-    path_for_plugin = "~/.oh-my-zsh/custom/plugins/#{plugin.first}"
-    unless File.exists? path_for_plugin
-      puts "Cloning #{plugin.last} into #{path_for_plugin}"
-      `git clone #{plugin.last} #{path_for_plugin}`
-    end
-  end
+task :brew_backup do
+  `brew bundle dump --force`
 end
 
-task :brew_tap_backup do
-  puts "Backing up taps"
-  `brew tap > #{file_in_current "brew_taps"}`
+task :brew_restore do
+  `brew bundle`
 end
-
-task :brew_tap_restore do
-  `cat #{file_in_current "brew_taps"} | xargs -n1 brew tap`
-end
-
-task :brew_formula_backup do
-  puts "Backing up installed formulas"
-  `brew list --full-name> #{file_in_current "brew_formulas"}`
-end
-
-task :brew_formula_restore do
-  `brew install $(cat #{file_in_current "brew_formulas"} | tr '\n' ' ')`
-end
-
-task :brew_backup => [:brew_tap_backup, :brew_formula_backup]
-task :brew_restore => [:brew_tap_restore, :brew_formula_restore]
 
 task :backup => [:brew_backup]
 
