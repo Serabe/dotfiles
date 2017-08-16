@@ -96,6 +96,12 @@ alias nwjs=/Applications/nwjs.app/Contents/MacOS/nwjs
 # no sleep
 alias nosleep='pmset noidle'
 
+# list symlinks
+alias symlinks='ls -l `find . -type l -print `'
+
+# go up two dirs
+alias ...=../..
+
 # Go settings
 export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
