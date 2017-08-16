@@ -102,6 +102,14 @@ alias symlinks='ls -l `find . -type l -print `'
 # go up two dirs
 alias ...=../..
 
+# Fuzzy branch search
+fbr() {
+    local branches branch
+    branches=$(git branch -a) &&
+    branch=$(echo "$branches" | fzf +s +m -e) &&
+    git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+}
+
 # Go settings
 export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
