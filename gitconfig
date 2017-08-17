@@ -1,13 +1,13 @@
 [user]
-	name = Sergio Arbeo
-	email = serabe@gmail.com
+    name = Sergio Arbeo
+    email = serabe@gmail.com
 [core]
-	excludesfile = ~/.gitignore
-	quotepath = false
-	autocrlf = input
-	editor = /usr/local/bin/nvim
+    excludesfile = ~/.gitignore
+    quotepath = false
+    autocrlf = input
+    editor = /usr/local/bin/nvim
 [github]
-	user = Serabe
+    user = Serabe
 [color]
     diff = auto
     status = auto
@@ -16,7 +16,7 @@
     meta = yellow
 [push]
     default = current
-	followTags = true
+    followTags = true
 [fetch]
     prune = true
 [alias]
@@ -59,25 +59,24 @@
     sl = stash list
     sa = stash apply
     ss = stash save
-	lol = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)%n\"
-	stsh = stash --keep-index
-	staash = stash --include-untracked
+    lol = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)%n\"
+    stsh = stash --keep-index
+    staash = stash --include-untracked
     staaash = stash --all
-	which = !git branch | grep -i
-	lucky = sh -c \"!git checkout $(git which $1 -m1)\" -
-	standup = !git log --all --author=$USER --since=\"9am yesterday\" --format=%s
+    which = !git branch | grep -i
+    lucky = sh -c \"!git checkout $(git which $1 -m1)\" -
+    standup = !git log --all --author=$USER --since=\"9am yesterday\" --format=%s
     lazy-standup = !git standup | stay
-	setup-fetching-prs = !git config --add remote.upstream.fetch '+refs/pull/*/head:refs/remotes/upstream/pr/*' && git fetch upstream
+    setup-fetching-prs = !git config --add remote.upstream.fetch '+refs/pull/*/head:refs/remotes/upstream/pr/*' && git fetch upstream
 [help]
-	autocorrect = 1
+    autocorrect = 1
 [credential]
-	helper = osxkeychain
-# Only in Chennai
+    helper = osxkeychain
 [commit]
-	template = /Users/serabe/.git_commit_message.txt
+    template = /Users/serabe/.git_commit_message.txt
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
 [diff]
-	compactionHeuristic = true
+    compactionHeuristic = true
 [http "https://gopkg.in"]
-	followRedirects = true
+    followRedirects = true
