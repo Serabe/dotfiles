@@ -78,12 +78,7 @@ task :set_up_vundle do
   `vim +PluginInstall +qall`
 end
 
-task :set_neovim do
-  `ln -s ~/.vim ~/.config/nvim`
-  `ln -s ~/.vimrc ~/.config/nvim/init.vim`
-end
-
-task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle, :set_neovim]
+task :default => [:symlink_files, :install_powerline_fonts, :set_up_vundle]
 
 task :brew_backup do
   `brew bundle dump --force`

@@ -227,6 +227,7 @@ set listchars=tab:→\ ,eol:⁋
 if (has("termguicolors"))
  set termguicolors
 endif
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 " Color Scheme
 set t_Co=256

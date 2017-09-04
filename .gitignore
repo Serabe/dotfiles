@@ -1,5 +1,7 @@
 vim/.netrwbook
+config/nvim/.vim
 config/nvim/plugged
+vim/bundle
 
 
 bin/protoc
