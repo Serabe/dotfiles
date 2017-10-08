@@ -35,4 +35,7 @@ yarn-error.log
 
 # VSCode
 .vscode
-.jsconfig.json
+jsconfig.json
+
+# Others
+.env
