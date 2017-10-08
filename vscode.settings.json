@@ -10,6 +10,7 @@
         "**/.hg": true,
         "**/.svn": true,
         "**/CVS": true,
+        "**/dist": true,
         "**/node_modules": true,
         "**/tmp": true
     },
@@ -42,5 +43,11 @@
             "before": ["j", "k"],
             "after": ["<Esc>"]
         }
-    ]
+    ],
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 0,
+    "vsicons.dontShowConfigManuallyChangedMessage": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontLigatures": true,
+    "eslint.autoFixOnSave": true
 }
