@@ -49,5 +49,8 @@
     "vsicons.dontShowConfigManuallyChangedMessage": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontLigatures": true,
-    "eslint.autoFixOnSave": true
+    "eslint.autoFixOnSave": true,
+    "html.format.indentHandlebars": true,
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false
 }
