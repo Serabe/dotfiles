@@ -20,20 +20,15 @@ zplug 'lib/completion', as:plugin, from:oh-my-zsh
 zplug 'lib/key-bindings', as:plugin, from:oh-my-zsh
 zplug 'lib/nvm', as:plugin, from:oh-my-zsh
 zplug 'lib/theme-and-appearance', as:plugin, from:oh-my-zsh
-zplug 'plugins/atom', as:plugin, from:oh-my-zsh
-zplug 'plugins/bower', as:plugin, from:oh-my-zsh
 zplug 'plugins/brew', as:plugin, from:oh-my-zsh
 zplug 'plugins/bundler', as:plugin, from:oh-my-zsh
-zplug 'plugins/capistrano', as:plugin, from:oh-my-zsh
 zplug 'plugins/cp', as:plugin, from:oh-my-zsh
 zplug 'plugins/dotenv', as:plugin, from:oh-my-zsh
 zplug 'plugins/fancy-ctrl-z', as:plugin, from:oh-my-zsh
 zplug 'plugins/gem', as:plugin, from:oh-my-zsh
 zplug 'plugins/git', as:plugin, from:oh-my-zsh
-zplug 'plugins/git-flow', as:plugin, from:oh-my-zsh
 zplug 'plugins/gitignore', as:plugin, from:oh-my-zsh
 zplug 'plugins/golang', as:plugin, from:oh-my-zsh
-zplug 'plugins/lein', as:plugin, from:oh-my-zsh
 zplug 'plugins/marked2', as:plugin, from:oh-my-zsh
 zplug 'plugins/npm', as:plugin, from:oh-my-zsh
 zplug 'plugins/osx', as:plugin, from:oh-my-zsh
@@ -41,6 +36,7 @@ zplug 'plugins/postgres', as:plugin, from:oh-my-zsh
 zplug 'plugins/rails', as:plugin, from:oh-my-zsh
 zplug 'plugins/rvm', as:plugin, from:oh-my-zsh
 zplug 'plugins/sublime', as:plugin, from:oh-my-zsh
+zplug 'plugins/yarn', as:plugin, from:oh-my-zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -110,12 +106,6 @@ fbr() {
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
-# Go settings
-export GOPATH=$HOME/Go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-
 # Mackup
 export MACKUP_CONFIG_FILE=~/.mackup-config-file
 
@@ -143,9 +133,6 @@ alias rcs="rails console --sandbox"
 
 # Find BOM
 alias find_bom="grep -rl $'\xEF\xBB\xBF' ."
-
-# Check PRs
-alias git-pr='f() { git fetch upstream && git checkout pr/"$1" && npm install && grunt init && npm start; }; f'
 
 # Go
 export GOPATH=$HOME/golang
