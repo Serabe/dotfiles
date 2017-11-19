@@ -52,5 +52,7 @@
     "eslint.autoFixOnSave": true,
     "html.format.indentHandlebars": true,
     "html.suggest.angular1": false,
-    "html.suggest.ionic": false
+    "html.suggest.ionic": false,
+    "search.useIgnoreFilesByDefault": true,
+    "search.useIgnoreFiles": true
 }
