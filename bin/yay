@@ -1,0 +1,3 @@
+#!/bin/bash
+afplay ~/.dotfiles/other_files/sounds/yay.mp3 -v -0.2 &
+exit 0
