@@ -78,6 +78,7 @@
     templatedir = ~/.git_template
 [diff]
     compactionHeuristic = true
+	colorMoved = zebra
 [http "https://gopkg.in"]
     followRedirects = true
 [include]
