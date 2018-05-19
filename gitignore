@@ -37,5 +37,8 @@ yarn-error.log
 .vscode
 jsconfig.json
 
+# nvm
+.nvmrc
+
 # Others
 .env

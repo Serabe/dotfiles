@@ -54,5 +54,8 @@
     "html.suggest.angular1": false,
     "html.suggest.ionic": false,
     "search.useIgnoreFilesByDefault": true,
-    "search.useIgnoreFiles": true
+    "search.useIgnoreFiles": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    }
 }

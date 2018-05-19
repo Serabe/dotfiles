@@ -58,7 +58,7 @@ task :symlink_files do
   end.each do |f|
     symlink_file f
   end
-  FileList["config/*"].to_a.each { |f| symlink_file f }
+	  FileList["config/*"].to_a.each { |f| symlink_file f }
 end
 
 task :install_powerline_fonts do
