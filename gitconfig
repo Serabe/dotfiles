@@ -83,3 +83,7 @@
     followRedirects = true
 [include]
 	path = ~/.git-custom-config
+[merge]
+	ff = false
+[pull]
+    ff = only

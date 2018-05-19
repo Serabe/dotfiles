@@ -14,12 +14,14 @@
         "**/node_modules": true,
         "**/tmp": true
     },
-    "vim.disableAnnoyingNeovimMessage": true,
     "vim.easymotion": true,
-    "vim.enableNeovim": true,
+    "vim.enableNeovim": false,
     "vim.leader": ",",
     "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.statusBarColorControl": true,
+    /*
+    experimental https://github.com/VSCodeVim/Vim/blob/master/README.md#vimstatusbarcolorcontrol
+    */
+    "vim.statusBarColorControl": false,
     "vim.statusBarColors": {
         "insert": "#5f0000",
         "normal": "#005f5f",
@@ -48,14 +50,25 @@
     "window.zoomLevel": 0,
     "vsicons.dontShowConfigManuallyChangedMessage": true,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontLigatures": true,
     "eslint.autoFixOnSave": true,
     "html.format.indentHandlebars": true,
     "html.suggest.angular1": false,
     "html.suggest.ionic": false,
-    "search.useIgnoreFilesByDefault": true,
     "search.useIgnoreFiles": true,
+    "tslint.autoFixOnSave": true,
+    "workbench.editor.labelFormat": "medium",
+    "alex.enable": true,
+    "gitlens.keymap": "alternate",
+    "vsicons.dontShowNewVersionMessage": true,
     "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
-    }
+    },
+    "telemetry.enableTelemetry": false
 }
