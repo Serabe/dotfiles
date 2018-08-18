@@ -1,9 +1,11 @@
 #!/usr/bin/env python
-import sys
-import requests
-import base64
-import re
 from subprocess import call
+import base64
+import os
+import re
+import requests
+import sys
+import tempfile
 
 master_json_url = sys.argv[-1]
 print 'downloading json %s' % master_json_url
@@ -14,85 +16,60 @@ resp = requests.get(master_json_url)
 content = resp.json()
 
 
-heights = [(i, d['height']) for (i, d) in enumerate(content['video'])]
-idx, _ = max(heights, key=lambda (_, h): h)
-video = content['video'][idx]
-video_base_url = base_url + video['base_url']
-print 'base url:', video_base_url
+def get_best_descriptor(descriptors, sorting_field):
+  fields = [(i, d[sorting_field]) for (i, d) in enumerate(descriptors)]
+  idx, _ = max(fields, key=lambda (_, h): h)
+  return descriptors[idx]
+
+def process_descriptor(descriptor, base_url):
+  descriptor_base_url = base_url + descriptor['base_url']
+  descriptor_base_url = re.sub(r"/[^/]+/\.\./", "/", descriptor_base_url)
+  print 'base_url:', descriptor_base_url
+
+  output_file = tempfile.NamedTemporaryFile(mode='wb', delete=False)
+  print 'saving to {}'.format(output_file.name)
+
+  download_segments(descriptor, descriptor_base_url, output_file)
+
+  output_file.flush()
+  output_file.close()
+  return output_file
 
 
-filename = 'video_%s.mp4' % video['id']
-print 'saving to %s' % filename
+def download_segments(descriptor, base_url, output_file):
+  init_segment = base64.b64decode(descriptor['init_segment'])
+  output_file.write(init_segment)
 
+  segments = descriptor['segments']
+    
+  for idx, segment in enumerate(descriptor['segments']):
+    segment_url = base_url + segment['url']
+    if idx % 10 == 0:
+      print "{} / {}".format(idx, len(segments))
+    resp = requests.get(segment_url, stream=True)
+    
+    if resp.status_code != 200:
+      print 'not 200!'
+      print resp
+      print segment_url
+      break
+    for chunk in resp:
+      output_file.write(chunk)
 
-video_file = open(filename, 'wb')
+video_file = process_descriptor(get_best_descriptor(content['video'], 'height'), base_url)
+audio_file = process_descriptor(get_best_descriptor(content['audio'], 'bitrate'), base_url)
 
-
-init_segment = base64.b64decode(video['init_segment'])
-video_file.write(init_segment)
-
-
-for idx, segment in enumerate(video['segments']):
-  segment_url = video_base_url + segment['url']
-  if idx % 10 == 0:
-      print "{} / {}".format(idx, len(video['segments']))
-  # print segment_url
-  resp = requests.get(segment_url, stream=True)
-  if resp.status_code != 200:
-    print 'not 200!'
-    print resp
-    print segment_url
-    break
-  for chunk in resp:
-    video_file.write(chunk)
-
-
-video_file.flush()
-video_file.close()
-
-bitrates = [(i, d['bitrate']) for (i, d) in enumerate(content['audio'])]
-idx, _ = max(bitrates, key=lambda (_, h): h)
-audio = content['audio'][idx]
-audio_base_url = base_url + audio['base_url']
-audio_base_url = re.sub(r"/[^/]+/\.\./", "/", audio_base_url)
-print 'base url:', audio_base_url
-
-
-audio_filename = 'audio_%s.mp4' % audio['id']
-print 'saving audio to %s' % audio_filename
-
-
-audio_file = open(audio_filename, 'wb')
-
-
-init_segment = base64.b64decode(audio['init_segment'])
-audio_file.write(init_segment)
-
-
-for idx, segment in enumerate(audio['segments']):
-  segment_url = audio_base_url + segment['url']
-  if idx % 10 == 0:
-      print "{} / {}".format(idx, len(audio['segments']))
-  # print segment_url
-  resp = requests.get(segment_url, stream=True)
-  if resp.status_code != 200:
-    print 'not 200!'
-    print resp
-    print segment_url
-    break
-  for chunk in resp:
-    audio_file.write(chunk)
-
-
-audio_file.flush()
-audio_file.close()
-
+print 'Merging video an audio'
 call([
 "ffmpeg",
-"-i", filename,
-"-i", audio_filename,
+"-i", video_file.name,
+"-i", audio_file.name,
 "-c:v", "copy",
 "-c:a", "aac",
 "-strict", "experimental",
 "final_video.mp4"
 ])
+
+print 'Removing tmp files'
+os.unlink(video_file.name)
+os.unlink(audio_file.name)
