@@ -6,13 +6,20 @@ import re
 import requests
 import sys
 import tempfile
+from argparse import ArgumentParser
 
-master_json_url = sys.argv[-1]
+parser = ArgumentParser(description="Download segmented videos from vimeo")
+parser.add_argument("master_json", help="url to the master json of the video")
+parser.add_argument("-o", "--output", help="path to the output file", default="final_video.mp4")
+args = parser.parse_args()
+
+master_json_url = args.master_json
 print 'downloading json %s' % master_json_url
 base_url = master_json_url[:master_json_url.rfind('/', 0, -26) + 1]
 
+session = requests.Session()
 
-resp = requests.get(master_json_url)
+resp = session.get(master_json_url)
 content = resp.json()
 
 
@@ -46,7 +53,7 @@ def download_segments(descriptor, base_url, output_file):
     segment_url = base_url + segment['url']
     if idx % 10 == 0:
       print "{} / {}".format(idx, len(segments))
-    resp = requests.get(segment_url, stream=True)
+    resp = session.get(segment_url, stream=True)
     
     if resp.status_code != 200:
       print 'not 200!'
@@ -67,7 +74,7 @@ call([
 "-c:v", "copy",
 "-c:a", "aac",
 "-strict", "experimental",
-"final_video.mp4"
+parser.output
 ])
 
 print 'Removing tmp files'

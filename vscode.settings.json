@@ -15,7 +15,7 @@
         "**/tmp": true
     },
     "vim.easymotion": true,
-    "vim.enableNeovim": false,
+    "vim.enableNeovim": true,
     "vim.leader": ",",
     "vim.neovimPath": "/usr/local/bin/nvim",
     /*
@@ -33,17 +33,20 @@
     "vsicons.presets.jsOfficial": true,
     "vsicons.presets.jsonOfficial": true,
     "vsicons.presets.tsOfficial": true,
-    "workbench.colorTheme": "Eagle Oceanic Next",
+    "workbench.colorTheme": "Cobalt2",
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
+        "editorIndentGuide.activeBackground": "#ffc600"
     },
     "vim.insertModeKeyBindings": [
         {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
     ],
     "vim.useSystemClipboard": true,
@@ -70,5 +73,38 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "gitlens.historyExplorer.enabled": true,
+    "sync.gist": "31fd799d5fba67fb544c31683334695c",
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastUpload": "2018-08-14T09:15:48.819Z",
+    "sync.lastDownload": "2018-06-21T23:00:57.475Z",
+    "sync.forceDownload": false,
+    "workbench.sideBar.location": "right",
+    "tslint.run": "onSave",
+    "terminal.integrated.rendererType": "dom",
+    "editor.formatOnSave": true,
+    "prettier.requireConfig": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.makeRoom",
+            "sequence": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.toggleActivityBarVisibility"
+            ]
+        }
+    ],
+    "workbench.activityBar.visible": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "editor.tabSize": 2,
 }
