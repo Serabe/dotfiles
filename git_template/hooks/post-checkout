@@ -7,7 +7,7 @@
 # $2 is the target commit
 # $3 is 1 if it is a branch checkout or 0 if it is a file checkout
 
-if [ $3 == "1" ]; then # if it is a branch checkout
+if [ $3 == "1" ] || [ $1 == $2 ]; then # if it is a branch checkout
     wip_subject="(wip)|(WIP)"
 
     last_commit_author_name=`git log -n 1 --format=format:%an $2`
