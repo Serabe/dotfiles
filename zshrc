@@ -242,3 +242,7 @@ function judge() {
     [ $last_exit_status -eq 0 ] && yay || boom
   fi
 }
+
+function killport() {
+    kill `sudo lsof -t -i:$1`
+}
