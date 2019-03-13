@@ -2,10 +2,6 @@ require 'rake'
 require 'erb'
 require 'tmpdir'
 
-EXCEPTIONS = {
-  "vscode.settings.json" => File.expand_path("~/Library/Application Support/Code/User/settings.json")
-}
-
 def file_in_home(name)
   File.join File.expand_path(ENV['HOME']), ".#{name}"
 end
@@ -44,8 +40,7 @@ DO_NOTHING = [
   "LICENSE",
   "README.md",
   "Rakefile",
-  "config",
-  "vscode_extensions"
+  "config"
 ]
 
 task :symlink_files do
