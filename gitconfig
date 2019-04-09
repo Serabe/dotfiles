@@ -73,7 +73,7 @@
 [credential]
     helper = osxkeychain
 [commit]
-    template = /Users/serabe/.git_commit_message.txt
+    template = ~/.git_commit_message.txt
 [init]
     templatedir = ~/.git_template
 [diff]
