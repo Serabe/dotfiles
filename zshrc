@@ -21,6 +21,7 @@ zplug 'lib/key-bindings', as:plugin, from:oh-my-zsh
 zplug 'lib/nvm', as:plugin, from:oh-my-zsh
 zplug 'lib/theme-and-appearance', as:plugin, from:oh-my-zsh
 zplug 'plugins/brew', as:plugin, from:oh-my-zsh
+zplug 'vasyharan/zsh-brew-services', as:plugin
 zplug 'plugins/bundler', as:plugin, from:oh-my-zsh
 zplug 'plugins/cp', as:plugin, from:oh-my-zsh
 zplug 'plugins/dotenv', as:plugin, from:oh-my-zsh
@@ -33,10 +34,13 @@ zplug 'plugins/marked2', as:plugin, from:oh-my-zsh
 zplug 'plugins/npm', as:plugin, from:oh-my-zsh
 zplug 'plugins/osx', as:plugin, from:oh-my-zsh
 zplug 'plugins/postgres', as:plugin, from:oh-my-zsh
-zplug 'plugins/rails', as:plugin, from:oh-my-zsh
+#zplug 'plugins/rails', as:plugin, from:oh-my-zsh
 zplug 'plugins/rvm', as:plugin, from:oh-my-zsh
 zplug 'plugins/sublime', as:plugin, from:oh-my-zsh
 zplug 'plugins/yarn', as:plugin, from:oh-my-zsh
+
+zplug 'caarlos0/zsh-pg', as:plugin
+zplug "MichaelAquilina/zsh-you-should-use"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -167,20 +171,20 @@ SPACESHIP_PROMPT_ORDER=(
   host          # Hostname section
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
+#  hg            # Mercurial section (hg_branch  + hg_status)
   package       # Package version
   node          # Node.js section
   ruby          # Ruby section
   elixir        # Elixir section
 #  xcode         # Xcode section
 #  swift         # Swift section
-  golang        # Go section
+#  golang        # Go section
 #  php           # PHP section
   rust          # Rust section
 #  haskell       # Haskell Stack section
 #  julia         # Julia section
 #  docker        # Docker section
-  aws           # Amazon Web Services section
+#  aws           # Amazon Web Services section
 #  venv          # virtualenv section
 #  conda         # conda virtualenv section
 #  pyenv         # Pyenv section
@@ -210,7 +214,8 @@ SPACESHIP_VENV_SHOW=false
 SPACESHIP_PYENV_SHOW=false
 SPACESHIP_DOTNET_SHOW=false
 SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_BATTERY_CHARGED_SHOW=false
+SPACESHIP_BATTERY_CHARGED_SHOW=low
+SPACESHIP_BATTERY_THRESHOLD="40"
 
 # New ulimit
 ulimit -S -n 2048
