@@ -273,3 +273,5 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+alias nombom='rm -rf node_modules && npm install && echo "(╯°□°）╯︵ ┻━┻"'
