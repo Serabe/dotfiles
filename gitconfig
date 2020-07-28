@@ -76,6 +76,7 @@
     template = ~/.git_commit_message.txt
 [init]
     templatedir = ~/.git_template
+	defaultBranch = main
 [diff]
     compactionHeuristic = true
 	colorMoved = zebra
