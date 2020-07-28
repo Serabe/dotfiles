@@ -1,0 +1,6 @@
+jq -r '.dependencies,.devDependencies|keys[]' package.json | while read line; do \
+  printf "$line: "
+  [ "$(npm show "$line" | grep -ic 'DEPRECATED')" != "0" ] && \
+  printf "\e[1;31m""DEPRECATED\n""\e[0m" || \
+  printf "\e[1;32m""not deprecated.\n""\e[0m"
+done
