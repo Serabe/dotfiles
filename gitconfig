@@ -5,7 +5,7 @@
     excludesfile = ~/.gitignore
     quotepath = false
     autocrlf = input
-    editor = /usr/local/bin/nvim
+    editor = $EDITOR
 [github]
     user = Serabe
 [color]
@@ -76,6 +76,7 @@
     template = ~/.git_commit_message.txt
 [init]
     templatedir = ~/.git_template
+	defaultBranch = main
 [diff]
     compactionHeuristic = true
 	colorMoved = zebra

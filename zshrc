@@ -42,7 +42,6 @@ zplug 'plugins/npm', as:plugin, from:oh-my-zsh
 zplug 'plugins/osx', as:plugin, from:oh-my-zsh
 zplug 'plugins/postgres', as:plugin, from:oh-my-zsh
 #zplug 'plugins/rails', as:plugin, from:oh-my-zsh
-zplug 'plugins/rvm', as:plugin, from:oh-my-zsh
 zplug 'plugins/sublime', as:plugin, from:oh-my-zsh
 zplug 'plugins/yarn', as:plugin, from:oh-my-zsh
 
@@ -71,6 +70,8 @@ export PATH="node_modules/.bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bi
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
+elif [[ -v VSCODE ]]; then
+  # Do nothing
 else
     export EDITOR='nvim'
 fi
@@ -282,3 +283,8 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 alias nombom='rm -rf node_modules && npm install && echo "(╯°□°）╯︵ ┻━┻"'
+
+export V8PATH="$HOME/programming/tools/v8"
+alias d8=$V8PATH/out.gn/x64.optdebug/d8
+alias tick-processor=$V8PATH/tools/mac-tick-processor
+export D8_PATH="$V8PATH/out.gn/x64.optdebug"
