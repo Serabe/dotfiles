@@ -55,7 +55,7 @@ zplug load
 
 # User configuration
 
-export PATH="$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH"
+export PATH="$HOME/programming/tools/depot_tools:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -64,6 +64,8 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
+elif [[ -v VSCODE ]]; then
+  # Do nothing
 else
     export EDITOR='nvim'
 fi
@@ -275,3 +277,8 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 alias nombom='rm -rf node_modules && npm install && echo "(╯°□°）╯︵ ┻━┻"'
+
+export V8PATH="$HOME/programming/tools/v8"
+alias d8=$V8PATH/out.gn/x64.optdebug/d8
+alias tick-processor=$V8PATH/tools/mac-tick-processor
+export D8_PATH="$V8PATH/out.gn/x64.optdebug"
