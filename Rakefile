@@ -10,6 +10,8 @@ def file_in_current(name)
   File.join __dir__, name
 end
 
+EXCEPTIONS = {}
+
 def file_dest(name)
   if EXCEPTIONS.has_key? name
     EXCEPTIONS[name]
