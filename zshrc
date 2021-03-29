@@ -288,3 +288,7 @@ export V8PATH="$HOME/programming/tools/v8"
 alias d8=$V8PATH/out.gn/x64.optdebug/d8
 alias tick-processor=$V8PATH/tools/mac-tick-processor
 export D8_PATH="$V8PATH/out.gn/x64.optdebug"
+export DENO_INSTALL="/Users/serabe/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export DVM_DIR="/Users/serabe/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"
